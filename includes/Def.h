@@ -1,4 +1,3 @@
-#pragma once
-#ifndef wcl_api
-#define wcl_api __declspec(dllimport)
+#ifndef w32cl_api
+	#define w32cl_api __declspec(dllexport)
 #endif
