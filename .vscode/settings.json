@@ -1,5 +1,13 @@
 {
 	"cSpell.words": [
-		"refthis"
-	]
+        "buildsystems",
+        "IWYU",
+        "MSVC",
+        "refthis"
+    ],
+    "files.associations": {
+        "xtree": "cpp",
+        "random": "cpp",
+        "xiosbase": "cpp"
+    }
 }
