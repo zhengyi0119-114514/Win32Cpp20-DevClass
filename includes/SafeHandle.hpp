@@ -64,9 +64,10 @@ class w32cl_api SafeHandle
      * @return VOID
      */
     VOID swap(SafeHandle &rsh) noexcept;
-    BOOL operator== (CONST SafeHandle& rsh);
+    BOOL operator==(CONST SafeHandle &rsh);
 
     virtual ~SafeHandle() noexcept;
+
   protected:
     virtual VOID CloseHandle();
     using date = struct

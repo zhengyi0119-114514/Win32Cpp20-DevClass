@@ -13,8 +13,8 @@ endif()
 
 include(CTest)
 include(Catch)
-target_link_libraries(test Catch2::Catch2WithMain)
-set_target_properties(test
+target_link_libraries(unit_test Catch2::Catch2WithMain)
+set_target_properties(unit_test
     PROPERTIES
     CXX_STANDARD 20
     C_STANDARD 17

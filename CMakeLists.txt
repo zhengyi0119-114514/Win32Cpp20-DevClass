@@ -14,6 +14,7 @@ target_sources(Win32ClassLib PRIVATE
     RemotePointer.cpp
     SafeHandle.cpp
     SafeProcessHandle.cpp
+    SafeThreadHandle.cpp
 )
 
 set_target_properties(Win32ClassLib
@@ -21,7 +22,9 @@ set_target_properties(Win32ClassLib
     CXX_STANDARD_REQUIRED 20
     CXX_EXTENSIONS FALSE
 )
-add_executable(test test/test.cpp)
-add_subdirectory(test)
-catch_discover_tests(test)
-target_link_libraries(test Win32ClassLib)
+
+enable_testing()
+add_executable(unit_test tests/test.cpp)
+add_subdirectory(tests)
+catch_discover_tests(unit_test)
+target_link_libraries(unit_test Win32ClassLib)

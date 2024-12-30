@@ -10,7 +10,6 @@ class w32cl_api ProcessHandle : public SafeHandle
   public:
     using SafeHandle::SafeHandle;
     using SafeHandle::operator HANDLE;
-    using SafeHandle::swap;
     using SafeHandle::operator&;
     using SafeHandle::operator=;
     /**
@@ -50,9 +49,9 @@ class w32cl_api ProcessHandle : public SafeHandle
     BOOL SetProcessPriorityBoost(BOOL bDisablePriorityBoost);
     BOOL GetProcessPriorityBoost() CONST;
     DWORD GetPriorityClass() const;
+    DWORD GetProcessID() const;
 
   protected:
-    virtual ~ProcessHandle() noexcept;
 };
 
 using process_handle = SafeHandles::ProcessHandle;

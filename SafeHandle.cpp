@@ -41,6 +41,10 @@ CONST HANDLE *SafeHandle::operator&() const
 {
     return &(ref_this.m_pDate->hHandle);
 }
+SafeHandle::operator HANDLE() const
+{
+    return ref_this.m_pDate->hHandle;
+}
 VOID SafeHandle::swap(SafeHandle &r) noexcept
 {
     std::swap(ref_this.m_pDate, r.m_pDate);

@@ -1,8 +1,9 @@
 #define w32cl_api __declspec(dllexport)
-#include "Def.h"
 #include "SafeProcessHandle.hpp"
+#include "Def.h"
 #include <strsafe.h>
 #include <windows.h>
+
 
 namespace W32Cl::SafeHandles
 {
@@ -49,5 +50,9 @@ BOOL ProcessHandle::GetProcessPriorityBoost() CONST
 BOOL ProcessHandle::SetProcessPriorityBoost(BOOL bProcessPriorityBoost)
 {
     return ::SetProcessPriorityBoost(ref_this.m_pDate->hHandle, bProcessPriorityBoost);
+}
+DWORD ProcessHandle::GetProcessID() const
+{
+    return ::GetProcessId(ref_this.m_pDate->hHandle);
 }
 } // namespace W32Cl::SafeHandles
